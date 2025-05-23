@@ -1,0 +1,471 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Theme Variables */
+:root {
+    --primary: #0ea5e9;
+    --primary-dark: #0369a1;
+    --secondary: #10b981;
+    --secondary-dark: #047857;
+}
+
+/* Dark Mode Colors */
+:root {
+    --dark-bg-primary: #111827;
+    --dark-bg-secondary: #1F2937;
+    --dark-text-primary: #F9FAFB;
+    --dark-text-secondary: #D1D5DB;
+}
+
+    body[dir="rtl"] {
+        font-family: 'Tajawal', sans-serif;
+    }
+
+
+
+    /* Cards */
+    
+    /* Buttons */
+  
+    /* Category Pills */
+
+    /* Product Cards Dark Mode Styles */
+
+
+/* Utilities Layer */
+
+/* Animations */
+@keyframes moveGradient {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.animate-bounce {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* Responsive */
+
+/* Utility Classes */
+
+/* Particle Animation Styles */
+.particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.client-logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.client-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    flex: 0 0 auto;
+    margin: 0 1rem;
+    width: 150px; /* Set fixed width for consistent alignment */
+    text-align: center; /* Center the text */
+}
+
+.clients-grid {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 2rem;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.client-card {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem;
+}
+
+.client-logo {
+    width: 120px;
+    height: 80px; /* Set fixed height for consistent spacing */
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.client-name {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-top: 0.5rem;
+    min-height: 2.4em; /* Ensure consistent height for text */
+}
+
+/* Contact Form Styles */
+#contact {
+    background-color: #f0f9ff;
+    color: #374151;  /* Dark gray text for light mode */
+}
+
+#contact input,
+#contact textarea {
+    background-color: #f1f5f9;
+    color: #1e293b;
+    border: 1px solid #cbd5e1;
+    transition: all 0.2s;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+    background-color: #ffffff;
+}
+
+#contact button:focus {
+    outline: none;
+    border-color: #000066; /* Slightly darker blue for focus */
+    box-shadow: 0 0 5px #000066;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+    color: #64748b;
+}
+
+#contact label {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+#contact button {
+    background-color: #0369a1;
+    color: white;
+    font-weight: 600;
+}
+
+#contact button:hover {
+    background-color: #0284c7;
+}
+
+/* Adjust spacing for the form */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 2px solid #cbd5e1;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+}
+
+/* Dark mode form border */
+.dark #contact form {
+    background-color: rgba(31, 41, 55, 0.95);  /* Dark but slightly transparent background */
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode form input and textarea */
+.dark #contact input,
+.dark #contact textarea {
+    background-color: #f8fafc;
+    color: #1e293b;
+    border-color: #e2e8f0;
+}
+
+/* Dark mode form label */
+.dark #contact label {
+    color: #1e293b;
+}
+
+/* Dark mode form placeholder text */
+.dark #contact input::placeholder,
+.dark #contact textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* Dark mode form button */
+.dark #contact button {
+    background-color: #0ea5e9;
+    color: white;
+}
+
+.dark #contact button:hover {
+    background-color: #2563eb;
+}
+
+/* Add to Cart Button Styles */
+.cart-btn {
+    background: linear-gradient(to right, #4f46e5, #3b82f6);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-btn:hover {
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px -1px rgba(0, 0, 0, 0.1), 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+}
+
+.cart-btn:active {
+    transform: translateY(0);
+}
+
+#orderNowBtn {
+    background: linear-gradient(to right, #4f46e5, #3b82f6);
+    color: rgb(114, 60, 60);
+    font-weight: 600;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+#orderNowBtn:hover {
+    background: linear-gradient(to right, #3b82f6, #2563eb);
+    transform: translateY(-2px);
+}
+
+/* Product Page Styles */
+.category-pill {
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: #f3f4f6;
+    color: #374151;
+    transition: all 0.2s;
+}
+
+.category-pill:hover {
+    background-color: #e5e7eb;
+}
+
+.category-pill.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.product-category {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.product-category[data-category="chemicals"] {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.product-category[data-category="media"] {
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+.product-category[data-category="glassware"] {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* Animation Elements */
+
+/* Keyframes for Atom Animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes orbit {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(50px) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(50px) rotate(-360deg);
+    }
+}
+
+/* Molecule Animation */
+.molecule {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 50px auto;
+}
+
+.molecule .atom {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #ff9800;
+    border-radius: 50%;
+    animation: bounce 3s ease-in-out infinite;
+}
+
+.molecule .atom:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+}
+
+.molecule .atom:nth-child(2) {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    animation-delay: 0.5s;
+}
+
+.molecule .atom:nth-child(3) {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    animation-delay: 1s;
+}
+
+.molecule .atom:nth-child(4) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 1.5s;
+}
+/* Animation for slow spinning */
+@keyframes spin-slow {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animation for bouncing */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-bounce {
+    animation: bounce 2s ease-in-out infinite;
+}
+
+/* Dark Mode Adjustments */
+/* Base Theme Colors */
+:root {
+    --primary-dark: #42a3c0;
+    --text-dark: #e2e8f0;
+    --bg-dark: #1a1a1a;
+}
+
+/* Dark Mode Overrides */
+.dark body {
+    background-color: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+}
+
+.dark .bg-white {
+    background-color: var(--dark-bg-secondary);
+}
+
+.dark .bg-blue-50 {
+    background-color: rgba(30, 58, 138, 0.1);
+}
+
+.dark .text-gray-600 {
+    color: var(--dark-text-secondary);
+}
+
+.dark .nav-link {
+    color: var(--dark-text-secondary);
+}
+
+.dark .nav-link:hover {
+    color: #60a5fa;
+}
+
+.dark #contact {
+    background-color: rgba(30, 58, 138, 0.1);  /* Keep the main section background */
+}
+
+.dark #contact h2,
+.dark #contact h3,
+.dark #contact p,
+.dark #contact span,
+.dark #contact div {
+    color: #ffffff;
+}
+
+.dark #contact input,
+.dark #contact textarea {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);  /* Lighter overlay for inputs */
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.dark #contact label {
+    color: #ffffff;
+}
+
+.dark #contact input::placeholder,
+.dark #contact textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.dark #contact button {
+    background-color: #ffffff;
+    color: #1e3a8a;
+}
+
+.dark #contact button:hover {
+    background-color: #e5e7eb;
+}
+
+.dark .client-card {
+    background-color: var(--dark-bg-secondary);
+    border-color: #3f5137;
+}
+
+.dark #home {
+    background: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+}
+
+#home .bg-primary {
+    background-color: #4b5563;  /* Gray color */
+}
+
+/* RTL Specific Adjustments */
+[dir="rtl"] .flex.space-x-6 {
+    gap: 1.5rem;  /* 24px spacing */
+}
