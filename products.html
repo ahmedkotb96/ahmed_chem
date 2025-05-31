@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H Chem - Products Catalog</title>
+    <!-- Add Tailwind first -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Tailwind config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        },
+                        secondary: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Add custom styles after Tailwind -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Add fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="font-poppins bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
+    <!-- Navigation Bar -->
+    <nav class="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-lg sticky top-0 z-40 border-b border-gray-200 dark:border-gray-700">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo Section -->
+                <a href="index.html" class="flex items-center hover:opacity-90 transition-opacity">
+                    <img src="./ahmed_chem.png" alt="H Chem Logo" class="h-12 w-auto">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
+                    <a href="index.html#home" class="nav-link text-primary-600 dark:text-primary-400 hover:text-secondary-500 dark:hover:text-secondary-400 font-medium transition-colors" data-i18n="nav.home">Home</a>
+                    <a href="index.html#products" class="nav-link text-gray-700 dark:text-gray-300 hover:text-secondary-500 dark:hover:text-secondary-400 font-medium transition-colors" data-i18n="nav.products">Products</a>
+                    <a href="index.html#about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-secondary-500 dark:hover:text-secondary-400 font-medium transition-colors" data-i18n="nav.about">About Us</a>
+                    <a href="index.html#clients" class="nav-link text-gray-700 dark:text-gray-300 hover:text-secondary-500 dark:hover:text-secondary-400 font-medium transition-colors" data-i18n="nav.clients">Clients</a>
+                    <a href="index.html#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-secondary-500 dark:hover:text-secondary-400 font-medium transition-colors" data-i18n="nav.contact">Contact</a>
+                    
+                    <!-- Theme Toggle -->
+                    <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+
+                    <!-- Language Toggle -->
+                    <button id="languageToggle" class="px-3 py-1.5 rounded-lg bg-primary-500 hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700 text-white text-sm font-medium transition-all">
+                        العربية (AR)
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-2">
+                    <!-- Theme Toggle for Mobile -->
+                    <button id="mobileThemeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+
+                    <!-- Language Toggle for Mobile -->
+                    <button id="mobileLangToggle" class="px-3 py-1.5 rounded-lg bg-primary-500 hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700 text-white text-sm font-medium transition-all">
+                        العربية
+                    </button>
+
+                    <!-- Menu Button -->
+                    <button class="mobile-menu-button p-3 focus:outline-none hover:bg-gray-100 rounded-lg transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu with improved styling -->
+        <div class="mobile-menu hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
+            <div class="px-6 py-4 space-y-3">
+                <a href="index.html#home" class="block py-3 px-4 text-primary font-medium hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-colors" data-i18n="nav.home">Home</a>
+                <a href="index.html#products" class="block py-3 px-4 text-gray-600 dark:text-gray-300 hover:text-secondary hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-colors" data-i18n="nav.products">Products</a>
+                <a href="index.html#about" class="block py-3 px-4 text-gray-600 dark:text-gray-300 hover:text-secondary hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-colors" data-i18n="nav.about">About Us</a>
+                <a href="index.html#clients" class="block py-3 px-4 text-gray-600 dark:text-gray-300 hover:text-secondary hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-colors" data-i18n="nav.clients">Clients</a>
+                <a href="index.html#contact" class="block py-3 px-4 text-gray-600 dark:text-gray-300 hover:text-secondary hover:bg-blue-50 dark:hover:bg-gray-700 rounded-lg transition-colors" data-i18n="nav.contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Catalog Section -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-4">
+            <h1 class="text-3xl font-bold text-center text-primary-600 dark:text-primary-400 mb-8" data-i18n="catalogTitle">Product Catalog</h1>
+            
+            <!-- Search and Filter Bar -->
+            <div class="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-end">
+                    <div class="md:col-span-6 relative">
+                        <div class="relative flex items-center">
+                            <input type="text" 
+                                   id="searchInput" 
+                                   data-i18n="searchPlaceholder"
+                                   placeholder="Search products..." 
+                                   class="w-full p-3 pl-10 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                   autocomplete="off">
+                            <button id="searchIcon" class="absolute left-3 text-gray-400 hover:text-gray-600 dark:hover:text-gray-300">
+                                <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div id="searchSuggestions" class="absolute w-full mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg hidden z-50 max-h-60 overflow-y-auto">
+                            <!-- Suggestions will be dynamically inserted here -->
+                        </div>
+                    </div>
+                    <div class="md:col-span-3">
+                        <select id="categoryFilter" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500">
+                            <option value="all" data-i18n="allCategories">All Categories</option>
+                            <option value="chemicals" data-i18n="chemicals">Chemicals</option>
+                            <option value="media" data-i18n="media">Media</option>
+                            <option value="glassware" data-i18n="glassware">Glassware</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-3">
+                        <select id="sortFilter" class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500">
+                            <option value="name" data-i18n="sortOptions.nameAsc">Name (A-Z)</option>
+                            <option value="name-desc" data-i18n="sortOptions.nameDesc">Name (Z-A)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Category Filters -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <button class="category-pill active bg-primary-500 text-white dark:bg-primary-600" data-category="all" data-i18n="allItems">All Items</button>
+                <button class="category-pill bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600" data-category="chemicals" data-i18n="chemicals">Chemicals</button>
+                <button class="category-pill bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600" data-category="media" data-i18n="media">Media</button>
+                <button class="category-pill bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600" data-category="glassware" data-i18n="glassware">Glassware</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="productsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+
+            <!-- Order Summary -->
+            <div id="orderSummary" class="fixed bottom-0 right-0 bg-white dark:bg-gray-800 p-4 shadow-lg rounded-tl-lg border-t border-l border-gray-200 dark:border-gray-700" style="display: none;">
+                <h3 class="text-lg font-semibold mb-2 dark:text-white">Order Summary</h3>
+                <div id="selectedItems" class="mb-4 max-h-40 overflow-y-auto">
+                    <!-- Selected items will be listed here -->
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="font-bold dark:text-white">Total Items: <span id="totalItems">0</span></span>
+                    <button id="orderNowBtn" class="bg-primary-500 hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition-all">
+                        Order Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-400">&copy; 2025 Ahmed Kotb. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./products.js"></script>
+    <script src="./Main.js"></script>
+    <script>
+        // Verify data loading
+        window.addEventListener('load', () => {
+            console.log('Available categories:', Object.keys(productData || {}));
+        });
+    </script>
+</body>
+</html>
